@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ndara.ai Customer AI - Knowledge Data Schema",
+  "description": "Business knowledge data structure for onboarding - matches backend payload",
+  "version": "2.0.0",
+  
+  "schemas": {
+    "knowledge_data": {
+      "type": "object",
+      "description": "Complete business knowledge data structure from backend for onboarding",
+      "required": ["business_info", "products", "services", "faqs", "policies", "business_hours", "ai_settings"],
+      "properties": {
+        "business_info": {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": {"type": "string", "description": "Business name"},
+            "description": {"type": "string", "description": "Business description"},
+            "phone": {"type": "string", "description": "Business phone number"},
+            "email": {"type": "string", "format": "email", "description": "Business email"},
+            "address": {"type": "string", "description": "Business address"},
+            "timezone": {"type": "string", "default": "Africa/Lagos", "description": "Business timezone"},
+            "whatsapp_number": {"type": "string", "description": "WhatsApp display phone number"}
+              }
+            },
+        "products": {
+          "type": "array",
+          "description": "List of products offered by the business",
+          "items": {
+              "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "name": {"type": "string"},
+              "price": {"type": "number"},
+              "category": {"type": "string"},
+              "availability": {"type": "boolean", "default": true},
+              "description": {"type": "string"},
+              "metadata": {"type": "object"}
+            }
+          }
+        },
+        "services": {
+          "type": "array",
+          "description": "List of services offered by the business (can be extended later)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string"},
+              "name": {"type": "string"},
+              "price": {"type": "number"},
+              "category": {"type": "string"},
+              "availability": {"type": "boolean", "default": true},
+              "description": {"type": "string"},
+              "metadata": {"type": "object"}
+            }
+          }
+        },
+        "faqs": {
+          "type": "array",
+          "description": "Frequently asked questions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {"type": "string"},
+              "answer": {"type": "string"},
+              "category": {"type": "string"}
+            }
+          }
+        },
+        "policies": {
+          "type": "object",
+          "description": "Business policies",
+          "properties": {
+            "return_policy": {"type": "string", "description": "Return/refund policy"},
+            "shipping_policy": {"type": "string", "description": "Shipping policy"},
+            "payment_methods": {"type": "string", "description": "Accepted payment methods"}
+      }
+    },
+        "business_hours": {
+      "type": "object",
+          "description": "Business operating hours",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "open": {"type": "string"},
+              "close": {"type": "string"},
+              "is_closed": {"type": "boolean"}
+            }
+          }
+        },
+        "ai_settings": {
+          "type": "object",
+          "required": ["personality", "language", "response_style", "enable_tools"],
+          "properties": {
+            "personality": {"type": "string", "description": "AI personality type"},
+            "language": {"type": "string", "default": "en", "description": "Response language"},
+            "response_style": {"type": "string", "default": "professional_friendly", "description": "Response style"},
+            "enable_tools": {
+          "type": "array",
+              "items": {"type": "string"},
+              "description": "List of enabled tools: 'product_search', 'check_availability', 'book_appointment', 'get_business_hours', 'get_product_by_id'"
+            }
+          }
+        }
+      }
+    }
+  }
+}

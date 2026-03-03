@@ -1,0 +1,96 @@
+# ================================================================
+# ndara.ai Customer AI - Environment Variables Template
+# ================================================================
+# Copy this file to .env and fill in your actual values
+# DO NOT commit .env to version control
+
+# ================================================================
+# API Configuration
+# ================================================================
+# API server host and port
+API_HOST=0.0.0.0
+API_PORT=8000
+
+# ================================================================
+# OpenAI Configuration (REQUIRED)
+# ================================================================
+# Your OpenAI API key for GPT models and embeddings
+# Get your key from: https://platform.openai.com/api-keys
+OPENAI_API_KEY=your-openai-api-key
+
+# ================================================================
+# Vector Database Configuration
+# ================================================================
+# Storage mode: "local" for ChromaDB (development) or "pgvector" for PostgreSQL with pgvector
+# Recommended: Use "pgvector" for production (same database as backend)
+VECTOR_STORAGE_MODE=pgvector
+
+# ChromaDB persistence directory (only for local mode)
+CHROMA_PERSIST_DIR=./chroma_db
+
+# PostgreSQL Configuration (required if VECTOR_STORAGE_MODE=pgvector)
+POSTGRES_HOST=your-postgres-host
+POSTGRES_PORT=5433
+POSTGRES_DB=your-database-name
+POSTGRES_USER=your-database-user
+POSTGRES_PASSWORD=your-secure-password
+
+# Note: Ensure pgvector extension is installed in PostgreSQL:
+# CREATE EXTENSION IF NOT EXISTS vector;
+
+# ================================================================
+# External Service URLs
+# ================================================================
+# Backend Bookings API base URL - working hours + appointments
+# Used for appointment availability check and booking (set in .env)
+APPOINTMENT_BOOKING_URL=
+
+# Bearer token for Bookings API (required if backend requires auth)
+# BOOKINGS_API_TOKEN=your-bearer-token
+
+# Backend Payment API base URL (set in .env)
+PAYMENT_SERVICE_URL=
+
+# Bearer token for Payment API (required if backend requires auth)
+# PAYMENT_API_TOKEN=your-bearer-token
+
+# Customer AI service URL (for notifications/callbacks)
+CUSTOMER_AI_URL=http://localhost:8000
+
+# ================================================================
+# Logging Configuration
+# ================================================================
+# Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+LOG_LEVEL=INFO
+
+# ================================================================
+# Production Settings (Optional)
+# ================================================================
+# Enable CORS for specific origins (comma-separated)
+# Leave empty or set to "*" for all origins (not recommended for production)
+CORS_ORIGINS=*
+
+# API key for authentication (if needed)
+# API_KEY=your_api_key_here
+
+# ================================================================
+# Performance Tuning (Optional)
+# ================================================================
+# Number of workers for production (if using gunicorn)
+# WORKERS=4
+
+# Timeout for requests (seconds)
+# REQUEST_TIMEOUT=30
+
+# ================================================================
+# Security Settings (Production)
+# ================================================================
+# Secret key for JWT or session management (if needed)
+# SECRET_KEY=your_secret_key_here
+
+# ================================================================
+# Monitoring & Health Checks (Optional)
+# ================================================================
+# Enable health check endpoint
+# HEALTH_CHECK_ENABLED=true
+
