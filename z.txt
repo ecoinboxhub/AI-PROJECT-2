@@ -1,0 +1,33 @@
+powershell -ExecutionPolicy Bypass
+
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+.\venv\Scripts\activate
+
+cd customer_ai
+
+cd business_owner_ai
+
+cd voice_agent
+
+
+Start-Sleep -Seconds 10
+
+C:\Python314\python.exe main.py
+
+C:\Python314\python.exe final_demo_check.py
+
+C:\Python314\python.exe demo_test.py
+
+ C:\Python314\python.exe smoke1_test.py 
+
+
+
+
+git config --global user.email
+
+
+git config --global user.name
+

@@ -1,0 +1,44 @@
+{
+  "test_1_technical_fixed": {
+    "trigger_type": "technical_fixed",
+    "business_id": "biz_123",
+    "customer_id": "cust_456",
+    "context": {
+      "ticket_id": "TKT-001",
+      "issue_summary": "Payment gateway outage",
+      "resolution": "Gateway restored, all transactions processing normally"
+    },
+    "personalization": {
+      "first_name": "Alice"
+    }
+  },
+  "test_2_order_located": {
+    "trigger_type": "order_located",
+    "business_id": "biz_123",
+    "customer_id": "cust_789",
+    "context": {
+      "order_id": "ORD-5678",
+      "status": "located and ready for dispatch",
+      "location": "Central Warehouse",
+      "expected_delivery": "Tomorrow"
+    },
+    "personalization": {
+      "first_name": "Bob"
+    }
+  },
+  "test_3_promotional_update": {
+    "trigger_type": "promotional_update",
+    "business_id": "biz_123",
+    "customer_id": "cust_321",
+    "context": {
+      "offer": "20% Yearly Loyalty Discount",
+      "offer_title": "Exclusive Yearly Loyalty Bonus",
+      "discount_percentage": 20,
+      "expiry": "2026-12-31",
+      "bonus_points": 500
+    },
+    "personalization": {
+      "first_name": "Carol"
+    }
+  }
+}
