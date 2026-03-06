@@ -115,17 +115,31 @@ postman_outbound_orchestration_collection.json
 
 
 project.toml
-#SCREEN_RECORDING_GUIDE.md
+SCREEN_RECORDING_GUIDE.md
 OUTBOUND_IMPLEMENTATION_CONFIRMATION.md
 #SECURITY.md
 #https://github.com/ecoinboxhub/
 
 
-smoke_test.py
-smoke_test1.py
+#smoke_test.py
+smoke1_test.py
 
 GIT_PUSH_SUCCESS.md
 
 SALES_CAPABILITY_ANALYSIS.md
 
 .gitignore
+
+
+test_output.txt
+
+verify_implementation.py
+
+DEMO_SCRIPT.py
+demo_test.py
+
+quick_debug_test.py
+
+final_demo_test.py
+
+z.txt

@@ -17,6 +17,14 @@ Start-Sleep -Seconds 10
 
 C:\Python314\python.exe main.py
 
+
+ C:\Python314\python.exe quick_test.py 
+
+ C:\Python314\python.exe smoke_test.py 
+
+
+
+
 C:\Python314\python.exe final_demo_check.py
 
 C:\Python314\python.exe demo_test.py
@@ -31,3 +39,118 @@ git config --global user.email
 
 git config --global user.name
 
+
+
+
+
+
+
+
+
+### **Step 1: Check which account your repo is using**
+
+Run:
+
+```bash
+git remote -v
+```
+
+This will show which GitHub account the current repository is linked to. You’ll see something like:
+
+```
+origin  https://github.com/EngrIBGIT/AI-PROJECT-2.git (fetch)
+origin  https://github.com/EngrIBGIT/AI-PROJECT-2.git (push)
+```
+
+If it points to `EngrIBGIT` (the old account), we need to update it to `ecoinboxhub`.
+
+---
+
+### **Step 2: Update the remote URL to your new account**
+
+Use the URL for your new account:
+
+```bash
+git remote set-url origin https://github.com/ecoinboxhub/AI-PROJECT-2.git
+```
+
+Check that it worked:
+
+```bash
+git remote -v
+```
+
+You should now see `ecoinboxhub` as the remote.
+
+---
+
+### **Step 3: Stage all your changes**
+
+You already have some staged changes. To make sure everything is included:
+
+```bash
+git add .
+```
+
+This will add **all changes and untracked files** (`z.txt`) to be committed.
+
+---
+
+### **Step 4: Commit your changes**
+
+Make a commit with a clear message:
+
+```bash
+git commit -m "Update project with new payloads and demo files"
+```
+
+---
+
+### **Step 5: Configure Git for this repo only (optional but recommended)**
+
+You don’t want to change your global Git account if you switch between accounts often. Instead, set the user **for this repo only**:
+
+```bash
+git config user.name "ecoinboxhub"
+git config user.email "ecoinboxhub@gmail.com"
+```
+
+This **overrides the global config** for this repository only.
+
+---
+
+### **Step 6: Push to GitHub**
+
+Finally, push your changes:
+
+```bash
+git push origin main
+```
+
+If Git asks for a username and password:
+
+* Use `ecoinboxhub` username
+* Use **personal access token** (PAT) instead of password, because GitHub removed password auth.
+
+---
+
+### **Step 7 (optional): Check everything**
+
+Confirm the push worked:
+
+```bash
+git log --oneline -5
+```
+
+
+
+
+Perfect! I’ve carefully reviewed your test logs. Here’s the summary and plan before we start:
+
+Your smoke_test.py and quick_test.py now pass consistently ✅
+
+Voice Agent is operational, triggers post correctly, and greetings are generated (though audio is No, which is optional if you’re focusing on text)
+
+The workflow is fully operational with Business Owner AI, Customer AI, and Voice Agent
+
+Now, the next step is to implement a Knowledge Base (KB) for Business Owner AI and make it dynamic, so it can be updated programmatically. I’ll guide you step by step, folder structure-friendly for your project.

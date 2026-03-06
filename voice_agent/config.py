@@ -17,7 +17,7 @@ class VoiceConfig(BaseSettings):
     
     # Server Configuration
     HOST: str = Field(default="0.0.0.0", description="Server host")
-    PORT: int = Field(default=8003, description="Server port")
+    PORT: int = Field(default=9003, description="Server port")
     DEBUG: bool = Field(default=False, description="Debug mode")
     
     # OpenAI Configuration (for Whisper STT)
